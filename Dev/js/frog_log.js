@@ -41,6 +41,7 @@ var frog_log = {
         this.attachStoredSites();
         this.bind();
         this.updateButtons();
+        this.fixHeight();
         
         if ( this.mode === 'dev' ) { this.dev(); }
     },
@@ -677,6 +678,24 @@ var frog_log = {
                 self.sortSites( order );
             }
         });
+    },
+    
+    /**
+     *  Fix Height
+     *
+     *  Used to fix a chrome extension bug where there is margin outside the html tag.
+     *
+     *  @param null
+     *  @return null
+     *
+     **/    
+    fixHeight: function() {
+        var height = $('html').height();
+        $('html')
+            .css('height', 0)
+            .animate({
+                'height': height    
+            }, 100);
     },
     
     'button[data-action="login"] click': function(ev, el) {
