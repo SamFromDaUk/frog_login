@@ -12,14 +12,14 @@ var options = {
             return;
         }
         
-        if ( this.data.mode ) {
-            $('.app_mode').val(this.data.mode);
+        if ( typeof this.data.mode !== 'undefined'  ) {
+            if ( this.data.dev_mode ) $('.app_dev_mode').prop('checked', true);
         }
         if ( typeof this.data.active !== 'undefined' ) {
             $('.app_active').val(this.data.active);
         }
         if ( typeof this.data.password !== 'undefined' ) {
-            $('.app_passwords').val(this.data.password.toString());
+            if ( this.data.password ) $('.app_passwords').prop('checked', true);
         }
     },
     
@@ -29,17 +29,16 @@ var options = {
         $('.options .btn-primary').click(function() {
             $('.options').find('input').each(function() {
                 
-                var value;
-                switch ( $(this).attr('data-type') ) {
-                    case 'text' :
-                        value = $(this).val();
+                var value,
+                    $this = $(this);
+                    
+                switch ( $this.attr('data-type') ) {
+                    case 'text' : value = $this.val();
                         break;
-                    case 'number':
-                        value = parseInt($(this).val(), 10);
+                    case 'number': value = parseInt($this.val(), 10);
                         break;
                     case 'boolean':
-                        value = ($(this).val() === 'true') ? true : false;
-                        break;
+                        value = $this.is(':checked');
                 }
                                 
                 self.data[ $(this).attr('data-name') ] = value;

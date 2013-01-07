@@ -35,7 +35,7 @@ var frog_login = {
         this.siteTpl = $('#tpl ul.site_tpl li')[0].outerHTML;
         this.form = $('form');
         this.url = $('.url');
-        this.mode = (this.data.mode) ? this.data.mode : 'production';
+        this.dev_mode = (this.data.mode) ? this.data.mode : false;
         
         this.renderFromStorage();
         this.attachStoredSites();
@@ -43,7 +43,7 @@ var frog_login = {
         this.updateButtons();
         this.fixHeight();
         
-        if ( this.mode === 'dev' ) { this.dev(); }
+        if ( this.dev_mode ) { this.dev(); }
     },
 
     /**
@@ -354,7 +354,7 @@ var frog_login = {
         var structure = {
             'active': 0,
             'password': true,
-            'mode': 'production',
+            'dev_mode': false,
             'urls': [
                 {url: '', login:[
                     {user:'', pass:''}
