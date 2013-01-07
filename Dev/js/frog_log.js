@@ -650,7 +650,6 @@ var frog_log = {
             var index = order[i];
             
             this.data.urls.push( storage[index] );
-            console.log(this.data);
             this.save();
         }
     },
