@@ -775,6 +775,8 @@ var frog_log = {
     },
     
     'span[data-action="remove.site"] click': function(ev, el) {
+        ev.stopPropagation();
+        
         var index = $(el).parent().attr('data-index');
         
         if ( this.data.urls.length < 2 ) {
@@ -787,7 +789,7 @@ var frog_log = {
             this.data.active--;
         }
 
-        this.save( this.form );
+        this.save();
         this.render();
     },
     
