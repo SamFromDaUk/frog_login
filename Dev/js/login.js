@@ -4,7 +4,7 @@
 /**
  *  Try Login
  *
- *  Attemps to login using the frog login page. Uses a global variable frog_log
+ *  Attemps to login using the frog login page. Uses a global variable frog_login
  *
  *  @param null
  *  @return null
@@ -12,9 +12,10 @@
  **/
 $(function() {
     if ( $('#login-box').length > 0 && $('#login-box').find('.error').length < 1 ) {
+        console.log( $('#login-box button') );
         $('#login-box')
             .find('input[name="username"]').val(frog_login.user).end()
             .find('input[name="password"]').val(frog_login.pass).end()
-            .find('button.btn-primary').click();
+            .find('input[type="submit"]').click();
     } 
 });
