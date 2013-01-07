@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <title>Frog Login</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="frog_log.css" />
+    <script src="jQuery.js"></script>
+    <script src="frog_log.js"></script>
+</head>
+<body>
+    
+<div class="frog_log">
+    <div id="tpl">
+        <div class="login_inline">
+            <input name="user" type="text" class="user input-small" placeholder="Username">
+            <input name="pass" type="text" class="pass input-small" placeholder="Password">
+            <button disabled="disabled" class="btn btn-small btn-primary" data-action="login" title="Sign in to this login">Sign in</button>
+            <button disabled="disabled" class="btn btn-small btn-danger" data-action="delete" title="Remove this login">X</button>
+        </div>
+        <ul class="site_tpl">
+            <li><span data-action="remove.site">x</span></li>
+        </ul>            
+    
+    </div>
+    
+    <!--Sites-->
+    <div class="sites_wrap">    
+        <ul class="sites"></ul>
+        <div style="text-align:center">
+            <button class="btn btn-mini btn-primary" data-action="new.site">+</button>
+        </div>
+    </div>
+    
+    <!--Active Site Info-->
+    <form>
+        <input name="url" type="text" class="url" placeholder="Frog Url" />
+        <button class="btn btn-mini btn-success add_url" data-action="add.url" title="Insert current tab url">+</button>
+        <div class="button-group">
+            <button type="submit" class="new_login btn btn-mini btn-success" data-action="new" title="Add a new login">New login</button>
+            <button class="btn btn-mini" data-action="defaults" title="Load dev logins">Load defaults</button>
+            <button class="btn btn-mini btn-danger" data-action="clear" title="Remove all logins">Clear logins</button>
+            <button class="btn btn-mini btn-warning" data-action="import" title="Import logins from a build">Import</button>
+            <a class="btn btn-mini btn-info hide_passwords" data-action="passwords">
+                Hide passwords
+                <input type="checkbox" name="hidePasswords" checked="checked" />
+            </a>
+        </div>
+    </form>
+    
+    <!--Import Sites To Logins-->
+    <div class="import_area">
+        <textarea></textarea>
+        <button class="btn btn-mini btn-success pull-right" data-action="import.logins">Import</button>
+        <button class="btn btn-mini btn-danger pull-right" disabled="disabled" data-action="import.delete">Clear</button>
+        <div style="clear:both"></div>
+    </div>
+</div>
+
+<div class="dev_bar">
+    DEV
+    <a class="clear_all_data">Clear localStorage</a>
+</div>
+    
+</body>
+</html>

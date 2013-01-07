@@ -1,0 +1,82 @@
+body {
+    margin:0;
+    padding:0;
+    background-color:#2b2b2b;
+    overflow:hidden;
+}
+
+form {
+    margin-bottom:0;
+}
+
+#tpl {
+    display:none;
+}
+
+.frog_log {
+    width:400px;
+    color:#ededed;
+    padding:10px;
+    border:1px solid #ededed;
+}
+
+.frog_log input {
+    width: 354px;
+}
+
+.login_inline input {
+    display:inline-block;
+    width: 120px;
+    font-size:12px;
+    padding: 1px 6px;
+}
+
+.login_inline button {
+    vertical-align:top;
+    height:25px;
+}
+
+.login_inline button.btn-primary {
+    height: 24px;
+    width:91px;
+}
+
+.login_inline button.btn-danger {
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+}
+
+input.url {
+    margin-bottom:20px;
+}
+
+div.button-group {
+    border-top:1px solid #ededed;
+    margin-top:10px;
+    padding-top:10px;
+}
+
+a.hide_passwords input {
+    margin-top: -1px;
+    width:auto;
+}
+
+div.import_area {
+    margin-top:10px;
+    display:none;
+}
+
+div.import_area textarea {
+    width:96%;
+    max-width:96%;
+    height:160px;
+}
+
+div.import_area .btn-success {
+    margin-left:10px;
+}
+
+button.add_url {
+    margin-top: -19px;
+}

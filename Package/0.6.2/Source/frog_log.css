@@ -1,0 +1,145 @@
+body {
+    margin:0;
+    padding:0;
+    background-color:#2b2b2b;
+    overflow:hidden;
+}
+
+form {
+    margin-bottom:0;
+}
+
+#tpl {
+    display:none;
+}
+
+.frog_log {
+    width:600px;
+    color:#ededed;
+    padding:10px;
+    border:1px solid #ededed;
+    overflow: hidden;
+}
+
+.frog_log input {
+    width: 354px;
+}
+
+.frog_log form {
+    float: right;
+    width: 400px;    
+}
+
+.login_inline input {
+    display:inline-block;
+    width: 120px;
+    font-size:12px;
+    padding: 1px 6px;
+}
+
+.login_inline button {
+    vertical-align:top;
+    height:25px;
+}
+
+.login_inline button.btn-primary {
+    height: 24px;
+    width:91px;
+}
+
+.login_inline button.btn-danger {
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+}
+
+input.url {
+    margin-bottom:20px;
+}
+
+div.button-group {
+    border-top:1px solid #ededed;
+    margin-top:10px;
+    padding-top:10px;
+}
+
+a.hide_passwords input {
+    margin-top: -1px;
+    width:auto;
+}
+
+div.import_area {
+    margin-top:10px;
+    display:none;
+    width: 400px;
+    float: right;    
+}
+
+div.import_area textarea {
+    width:96%;
+    max-width:96%;
+    height:160px;
+}
+
+div.import_area .btn-success {
+    margin-left:10px;
+}
+
+button.add_url {
+    margin-top: -19px;
+}
+
+div.sites_wrap {
+    float: left;
+    width: 200px;
+    margin:0;    
+}
+
+ul.sites {
+    margin:0;
+}
+
+ul.sites li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;    
+    cursor: pointer;
+    list-style-type: none;
+    margin: 0 10px 3px 0;
+    padding:5px;
+    height:20px;
+    border:1px solid #3D3D3D;
+    position:relative;
+}
+
+ul.sites li.active {
+    background-color:#F06C6C;
+}
+
+ul.sites li:hover {
+    background-color:#575757;
+}
+
+ul.sites li span {
+    position:relative;
+    z-index: 2;
+    float:right;
+    font-size:17px;
+    padding: 0 5px;
+    display:none;
+}
+
+ul.sites li:hover span {
+    display:inline;
+}
+
+ul.sites li span:hover {
+    color:#F06C6C;
+    font-size:17px;
+}
+
+div.dev_bar {
+    display:none;
+    color:#fff;
+    padding:5px;
+}
