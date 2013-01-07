@@ -68,10 +68,10 @@ var frog_log = {
             if ( keys[i].match(/[ ]/) ) {
                 
                 var delegateFunc = keys[i].split(' '),
-                    event = delegateFunc[ delegateFunc.length-1 ],
+                    event = delegateFunc[ delegateFunc.length-1 ].replace('|', ', '),
                     selector = '',
                     keyName = keys[i];
-                    
+                
                 for (var x = 0; x < delegateFunc.length-1; x++) {
                     if (selector !== '') {
                         selector += ' ';
@@ -650,6 +650,7 @@ var frog_log = {
             var index = order[i];
             
             this.data.urls.push( storage[index] );
+            console.log(this.data);
             this.save();
         }
     },
@@ -664,6 +665,7 @@ var frog_log = {
      *
      **/
     sortable: function() {
+        var self = this;
         $('.sites').sortable({
             stop: function() {
                 var order = [];

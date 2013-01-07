@@ -15,6 +15,6 @@ $(function() {
         $('#login-box')
             .find('input[name="username"]').val(frog_log.user).end()
             .find('input[name="password"]').val(frog_log.pass).end()
-            .find('.btn-primary').click();
+            .find('button.btn-primary').click();
     } 
 });
