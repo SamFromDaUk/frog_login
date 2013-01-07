@@ -4,9 +4,9 @@
  *  Version : dev
  **/
 
-$(function() { frog_log.init(); });
+$(function() { frog_login.init(); });
 
-var frog_log = {
+var frog_login = {
     
     defaultLogins: [
         {user: 'admin1'  , pass:'admin1pass'},
