@@ -16,8 +16,10 @@
         <div class="login_inline">
             <input name="user" type="text" class="user input-small" placeholder="Username">
             <input name="pass" type="text" class="pass input-small" placeholder="Password">
-            <button disabled="disabled" class="btn btn-small btn-primary" data-action="login" title="Sign in to this login">Sign in</button>
-            <button disabled="disabled" class="btn btn-small btn-danger" data-action="delete" title="Remove this login">X</button>
+            <div class="btn-group">
+                <button disabled="disabled" class="btn btn-small btn-primary" data-action="login" title="Sign in to this login">Sign in</button>
+                <button disabled="disabled" class="btn btn-small btn-danger" data-action="delete" title="Remove this login">X</button>
+            </div>
         </div>
         <ul class="site_tpl">
             <li><span data-action="remove.site">x</span></li>
@@ -37,15 +39,18 @@
     <form>
         <input name="url" type="text" class="url" placeholder="Frog Url" />
         <button class="btn btn-mini btn-success add_url" data-action="add.url" title="Insert current tab url">+</button>
-        <div class="button-group">
-            <button type="submit" class="new_login btn btn-mini btn-success" data-action="new" title="Add a new login">New login</button>
-            <button class="btn btn-mini" data-action="defaults" title="Load dev logins">Load defaults</button>
-            <button class="btn btn-mini btn-danger" data-action="clear" title="Remove all logins from this url">Clear logins</button>
-            <button class="btn btn-mini btn-warning" data-action="import" title="Import logins from a build">Import</button>
-            <button class="btn btn-mini btn-info hide_passwords" title="Show/Hide passwords" data-action="passwords">
-                Hide passwords
-                <input type="checkbox" name="hidePasswords" checked="checked" />
-            </button>
+        
+        <div class="app_options">
+            <div class="btn-group">
+                <button type="submit" class="new_login btn btn-mini btn-success" data-action="new" title="Add a new login">New login</button>
+                <button class="btn btn-mini" data-action="defaults" title="Load dev logins">Load defaults</button>
+                <button class="btn btn-mini btn-danger" data-action="clear" title="Remove all logins from this url">Clear logins</button>
+                <button class="btn btn-mini btn-warning" data-action="import" title="Import logins from a build">Import</button>
+                <button class="btn btn-mini btn-info hide_passwords" title="Show/Hide passwords" data-action="passwords">
+                    Hide passwords
+                    <input type="checkbox" name="hidePasswords" checked="checked" />
+                </button>
+            </div>
         </div>
     </form>
     
@@ -59,12 +64,14 @@
 </div>
 
 <div class="dev_bar">
-    DEV
-    <a class="clear_all_data">Clear localStorage</a>
-    <a class="log_temp">Log temp data</a>
-    <a class="log_stored">Log stored data</a>
-    <a class="insert_json">Insert JSON as data</a>
-    <a class="data_as_string">Get data as string</a>
+    Dev Tools
+    <div class="btn-group">
+        <a class="btn btn-mini clear_all_data">Clear localStorage</a>
+        <a class="btn btn-mini log_temp">Log temp data</a>
+        <a class="btn btn-mini log_stored">Log stored data</a>
+        <a class="btn btn-mini insert_json">Insert data</a>
+        <a class="btn btn-mini data_as_string">Get data</a>
+    </div>
 </div>
     
 </body>

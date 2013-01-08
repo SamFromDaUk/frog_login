@@ -57,22 +57,21 @@ form {
     height:25px;
 }
 
-.login_inline button.btn-primary {
+.login_inline .btn-primary {
     height: 24px;
-    width:91px;
+    margin-top: -8px;    
 }
 
-.login_inline button.btn-danger {
-    height: 25px;
-    width: 25px;
-    padding: 2px;
+.login_inline .btn-danger {
+    height:25px;
+    margin-top:-8px;
 }
 
 input.url {
     margin-bottom:20px;
 }
 
-div.button-group {
+form div.options {
     border-top:1px solid #ededed;
     margin-top:10px;
     padding-top:10px;
@@ -167,7 +166,14 @@ textarea.string, textarea.insert {
     resize: vertical;
     width: 546px;
     display: block;
-    min-height: 120px;   
+    min-height: 120px;
+    margin-top:10px; 
+}
+
+div.app_options p {
+    padding-bottom:5px;
+    margin-bottom:5px;
+    border-bottom:1px solid #ededed;
 }
 
 div.options {
@@ -180,12 +186,6 @@ div.options {
 
 div.options h3 {
     text-align: center;
-}
-
-div.options p {
-    padding-bottom:5px;
-    margin-bottom:5px;
-    border-bottom:1px solid #ededed;
 }
 
 div.options span {

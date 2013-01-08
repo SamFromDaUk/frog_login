@@ -195,7 +195,7 @@ var frog_login = {
         $('form div.login_inline').each(function(index, el) {
             $el = $(el);
             if ( $el.children('.user').val() === '' || $el.children('.pass').val() === '' ) {
-                $el.children('.btn-primary').attr('disabled', 'disabled');
+                $el.find('.btn-primary').attr('disabled', 'disabled');
             }
         });
 
@@ -339,7 +339,7 @@ var frog_login = {
                 temp.children('input.pass')
                     .val(this.data.urls[this.data.active].login[i].pass)
                     .prop('type', type);
-                $('button.new_login').parent().before( temp );
+                $('.app_options').before( temp );
             }
             
         }
@@ -694,11 +694,10 @@ var frog_login = {
      *
      **/
     fixHeight: function() {
-        var height = $('html').height();
         $('html')
             .css('height', 0)
             .animate({
-                'height': height
+                'height': '150'
             }, 100);
     },
     
@@ -755,7 +754,7 @@ var frog_login = {
     },
     
     'button[data-action="delete"] click': function(ev, el) {
-        $(el).parent().remove();
+        $(el).closest('.login_inline').remove();
         this.save( this.form );
         this.updateButtons();
     },
@@ -863,7 +862,7 @@ var frog_login = {
         
     },
     
-    '.sites li click': function(ev, el) {
+    'ul.sites li click': function(ev, el) {
         var $this = $(el);
 
         if ( $this.hasClass('active') ) { return; }
