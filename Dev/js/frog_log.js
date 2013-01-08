@@ -35,7 +35,7 @@ var frog_login = {
         this.siteTpl = $('#tpl ul.site_tpl li')[0].outerHTML;
         this.form = $('form');
         this.url = $('.url');
-        this.dev_mode = (this.data.dev_mode) ? this.data.dev_mode : false;
+        this.dev_mode = (typeof this.data.dev_mode !== 'undefined') ? this.data.dev_mode : false;
         
         this.renderFromStorage();
         this.attachStoredSites();
