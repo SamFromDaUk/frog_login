@@ -78,7 +78,7 @@ div.button-group {
     padding-top:10px;
 }
 
-a.hide_passwords input {
+button.hide_passwords input {
     margin-top: -1px;
     width:auto;
 }

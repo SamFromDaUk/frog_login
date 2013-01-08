@@ -753,7 +753,7 @@ var frog_login = {
         this.updateButtons();
     },
     
-    'a[data-action="passwords"] click': function(ev, el) {
+    'button[data-action="passwords"] click': function(ev, el) {
         var $passwords = $('.hide_passwords').children('input');
         
         if ( $passwords.is(':checked') ) {
