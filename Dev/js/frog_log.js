@@ -688,13 +688,13 @@ var frog_login = {
      *  @param null
      *  @return null
      *
-     **/    
+     **/
     fixHeight: function() {
         var height = $('html').height();
         $('html')
             .css('height', 0)
             .animate({
-                'height': height    
+                'height': height
             }, 100);
     },
     
