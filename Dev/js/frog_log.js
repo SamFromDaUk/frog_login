@@ -1,13 +1,15 @@
 /**
  *  Author  : Sam Warren
  *  Name    : Frog Login
- *  Version : dev
+ *  Version : 0.9.1
  **/
 
 $(function() { frog_login.init(); });
 
 var frog_login = {
     
+    version: '0.9.1',
+    logoutUrl : '/app/os/logout',
     defaultLogins: [
         {user: 'admin1'  , pass:'admin1pass'},
         {user: 'admin2'  , pass:'admin2pass'},
@@ -16,7 +18,6 @@ var frog_login = {
         {user: 'student1', pass:'student1pass'},
         {user: 'student2', pass:'student2pass'}
     ],
-    logoutUrl : '/app/os/logout',
     
     /**
      *  Initialise
@@ -29,13 +30,16 @@ var frog_login = {
      *
      **/
     init: function() {
-        
         this.data = this.load();
         this.loginTpl = $('#tpl .login_inline')[0].outerHTML;
         this.siteTpl = $('#tpl ul.site_tpl li')[0].outerHTML;
         this.form = $('form');
         this.url = $('.url');
         this.dev_mode = (typeof this.data.dev_mode !== 'undefined') ? this.data.dev_mode : false;
+        
+        if ( this.version !== this.data.version ) {
+            this.upgrade();
+        }
         
         this.renderFromStorage();
         this.attachStoredSites();
@@ -697,6 +701,44 @@ var frog_login = {
                 'height': height
             }, 100);
     },
+    
+    /**
+     *  Upgrade
+     *
+     *  Runs upgrades between versions
+     *  Converts version numbers like 0.9.1 to 1091 for use in loops
+     *
+     *  @param null
+     *  @return null
+     *
+     **/
+    upgrade: function() {
+        
+        var i = 0;
+        
+        if (!this.version ) {
+            window.localStorage.setItem( 'frog_log', '' );
+            alert('Your version of Frog Login was < 0.9.1. Please reload the extension to proceed.');
+            return;
+        }
+        
+        if ( !this.data.version ) {
+            this.data.version = '0.9.1';
+        }
+        
+        var oldVersionTemp = this.data.version.split('.'),
+            newVersionTemp = this.version.split('.'),
+            oldVersion = '1',
+            newVersion = '1';
+        
+        for ( i = 0; i < oldVersionTemp.length; i++ ) { oldVersion += +oldVersionTemp[i]; }
+        for ( i = 0; i < newVersionTemp.length; i++ ) { newVersion += +newVersionTemp[i]; }
+
+        this.data.version = this.version;
+        
+        //this.save();
+     
+     },
     
     'button[data-action="login"] click': function(ev, el) {
         var $this = $(el),
