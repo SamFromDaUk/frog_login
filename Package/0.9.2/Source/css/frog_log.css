@@ -1,0 +1,200 @@
+@font-face {
+    font-family: DroidSans;
+    src: url(../font/DroidSans.ttf);
+    font-weight:400;
+}
+
+body {
+    margin:0;
+    padding:0;
+    background-color:#2b2b2b;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+body, input, button, select, textarea {
+    font-family: DroidSans, Helvetica, Arial, sans-serif;
+}
+
+.btn-mini {
+    line-height:21px;
+}
+
+form {
+    margin-bottom:0;
+}
+
+#tpl {
+    display:none;
+}
+
+.frog_log {
+    width:650px;
+    color:#ededed;
+    padding:10px;
+    border:1px solid #ededed;
+    overflow: hidden;
+}
+
+.frog_log input {
+    width: 354px;
+}
+
+.frog_log form {
+    float: right;
+    width: 400px;    
+}
+
+.login_inline input {
+    display:inline-block;
+    width: 120px;
+    font-size:12px;
+    padding: 1px 6px;
+}
+
+.login_inline button {
+    vertical-align:top;
+    height:25px;
+}
+
+.login_inline button.btn-primary {
+    height: 24px;
+    width:91px;
+}
+
+.login_inline button.btn-danger {
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+}
+
+input.url {
+    margin-bottom:20px;
+}
+
+div.button-group {
+    border-top:1px solid #ededed;
+    margin-top:10px;
+    padding-top:10px;
+}
+
+button.hide_passwords input {
+    margin-top: -1px;
+    width:auto;
+}
+
+div.import_area {
+    margin-top:10px;
+    display:none;
+    width: 400px;
+    float: right;    
+}
+
+div.import_area textarea {
+    width:96%;
+    max-width:96%;
+    height:160px;
+}
+
+div.import_area .btn-success {
+    margin-left:10px;
+}
+
+button.add_url {
+    margin-top: -19px;
+}
+
+div.sites_wrap {
+    float: left;
+    width: 250px;
+    margin:0;    
+}
+
+ul.sites {
+    margin:0;
+}
+
+ul.sites li {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;    
+    cursor: pointer;
+    list-style-type: none;
+    margin: 0 10px 3px 0;
+    padding:5px;
+    height:20px;
+    border:1px solid #3D3D3D;
+    position:relative;
+}
+
+ul.sites li.active {
+    background-color:#F06C6C;
+}
+
+ul.sites li:hover {
+    background-color:#575757;
+}
+
+ul.sites li span {
+    position:relative;
+    z-index: 2;
+    float:right;
+    font-size:17px;
+    padding: 0 5px;
+    display:none;
+}
+
+ul.sites li:hover span {
+    display:inline;
+}
+
+ul.sites li span:hover {
+    color:#F06C6C;
+    font-size:17px;
+}
+
+div.dev_bar {
+    display:none;
+    color:#fff;
+    padding:5px;
+}
+
+div.dev_bar a {
+    cursor:pointer;
+}
+
+textarea.string, textarea.insert {
+    resize: vertical;
+    width: 546px;
+    display: block;
+    min-height: 120px;   
+}
+
+div.options {
+    margin:10px auto;
+    padding:10px;
+    width:500px;
+    color:#ededed;
+    font-family: DroidSans, Helvetica, Arial, sans-serif !important;
+}
+
+div.options h3 {
+    text-align: center;
+}
+
+div.options p {
+    padding-bottom:5px;
+    margin-bottom:5px;
+    border-bottom:1px solid #ededed;
+}
+
+div.options span {
+    width:50%;
+    text-align: right;
+    display:inline-block;
+}
+
+div.options input {
+    width: 238px;
+    padding:3px 0.5%;
+}
