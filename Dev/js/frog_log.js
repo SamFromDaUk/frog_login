@@ -731,8 +731,8 @@ var frog_login = {
             oldVersion = '1',
             newVersion = '1';
         
-        for ( i = 0; i < oldVersionTemp.length; i++ ) { oldVersion += +oldVersionTemp[i]; }
-        for ( i = 0; i < newVersionTemp.length; i++ ) { newVersion += +newVersionTemp[i]; }
+        for ( i = 0; i < oldVersionTemp.length; i++ ) { oldVersion += oldVersionTemp[i]; }
+        for ( i = 0; i < newVersionTemp.length; i++ ) { newVersion += newVersionTemp[i]; }
 
         this.data.version = this.version;
         
