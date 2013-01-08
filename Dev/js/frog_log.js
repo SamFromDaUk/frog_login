@@ -697,7 +697,7 @@ var frog_login = {
         $('html')
             .css('height', 0)
             .animate({
-                'height': '150'
+                'height': '139'
             }, 100);
     },
     
