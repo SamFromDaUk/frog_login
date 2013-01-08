@@ -207,7 +207,7 @@ var frog_login = {
      *
      **/
     message: function(message) {
-        if (this.mode === 'dev') { console.log(message); }
+        if (this.dev_mode) { console.log(message); }
     },
 
     /**
