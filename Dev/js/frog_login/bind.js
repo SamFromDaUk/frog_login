@@ -27,11 +27,11 @@ frog_login.push({
                     selector = '',
                     keyName = keys[i];
                 
-                for (var x = 0; x < delegateFunc.length-1; x++) {
+                for (var j = 0; j < delegateFunc.length-1; j++) {
                     if (selector !== '') {
                         selector += ' ';
                     }
-                    selector += delegateFunc[x];
+                    selector += delegateFunc[j];
                 }
                     
                 (function(keyName) {

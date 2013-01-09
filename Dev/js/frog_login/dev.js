@@ -1,6 +1,14 @@
 frog_login.push({
 
 
+    'a.clear_all_data click': function(ev, el) {
+        window.localStorage.setItem(
+            'frog_log',
+            ''
+        );
+        alert('cleared localStorage');
+    },
+
     /**
      *  Development
      *
@@ -14,14 +22,6 @@ frog_login.push({
         var self = this;
 
         $('div.dev_bar').show();
-
-        $('.clear_all_data').click(function() {
-            window.localStorage.setItem(
-                'frog_log',
-                ''
-            );
-            alert('cleared localStorage');
-        });
 
         $('.log_temp').click(function() {
             console.log(self.data);
@@ -74,4 +74,4 @@ frog_login.push({
         });
     }
     
-})
+});
