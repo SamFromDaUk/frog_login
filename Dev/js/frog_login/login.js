@@ -11,7 +11,6 @@
  *
  **/
 $(function() {
-    console.log(frog_login);
     if ( $('#login-box').length > 0 && $('#login-box').find('.error').length < 1 ) {
         $('#login-box')
             .find('input[name="username"]').val(frog_login.user).end()
