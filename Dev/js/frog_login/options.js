@@ -68,6 +68,6 @@ var options = {
     
     saveOptions: function() {
         window.localStorage.setItem('frog_log', JSON.stringify(this.data));
-        window.close(); 
+        window.close();
     }
 };
