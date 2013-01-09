@@ -617,7 +617,16 @@ var frog_login = {
         //this.save();
      
     },
-    
+
+    /**
+     *  Push
+     *
+     *  Takes an object and attaches all the keys to frog_login
+     *
+     *  @param obj
+     *  @return null
+     *
+     **/    
     push: function( obj ) {
         for (key in obj) {
             this[key] = obj[key];
