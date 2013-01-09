@@ -1,7 +1,4 @@
-steal( 
-    '../../css/bootstrap.css',
-    '../../css/jquery-ui-1.9.2.custom.min.css',
-    '../../css/frog_login.css',
+steal(
     'lib/jQuery.js'
 ).then(
     'lib/jquery-ui-1.9.2.custom.min.js',
@@ -12,4 +9,4 @@ steal(
     'frog_login/upgrade.js'
 ).then(function() {
     frog_login.init();
-})
+});

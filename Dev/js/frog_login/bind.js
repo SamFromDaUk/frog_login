@@ -178,6 +178,10 @@ frog_login.push({
         this.data.active = parseInt($this.index(), 10);
         this.save();
         this.render();
+    },
+
+    'ul.sites li dblclick': function(ev, el) {
+        this.url.select();
     }
     
 });

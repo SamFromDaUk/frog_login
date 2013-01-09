@@ -33,11 +33,14 @@ var frog_login = {
         this.siteTpl = $('#tpl ul.site_tpl li')[0].outerHTML;
         this.form = $('form');
         this.url = $('.url');
+        this.wrapper = $('.frog_log');
         this.dev_mode = (typeof this.data.dev_mode !== 'undefined') ? this.data.dev_mode : false;
         
         if ( this.version !== this.data.version ) {
             this.upgrade();
         }
+        
+        this.wrapper.css('visibility', 'visible');
         
         this.renderFromStorage();
         this.attachStoredSites();
