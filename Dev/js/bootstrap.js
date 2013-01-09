@@ -8,7 +8,8 @@ steal(
     'frog_login/core.js'
 ).then(
     'frog_login/bind.js',
-    'frog_login/dev.js'
+    'frog_login/dev.js',
+    'frog_login/upgrade.js'
 ).then(function() {
     frog_login.init();
 })
