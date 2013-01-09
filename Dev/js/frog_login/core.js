@@ -295,6 +295,7 @@ var frog_login = {
                     .prop('type', type);
                 $('.app_options').before( temp );
             }
+            this.updateButtons();
             
         }
     },
