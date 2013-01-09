@@ -56,7 +56,7 @@ frog_login.push({
     },
     
     'button[data-action="new"] click': function(ev, el) {
-        $('button.new_login').parent().before( this.loginTpl );
+        $('button.new_login').closest('.app_options').before( this.loginTpl );
         this.save( this.form );
         this.updateButtons();
     },
