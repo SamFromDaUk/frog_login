@@ -186,7 +186,7 @@ var frog_login = {
             
             $tpl.children('input.pass').prop('type', type);
             
-            $('button.new_login').parent().before( $tpl );
+            $('button.new_login').closest('.app_options').before( $tpl );
         }
     },
 
