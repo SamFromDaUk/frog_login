@@ -49,8 +49,8 @@ frog_login.push({
 
     'button[data-action="login"] click': function(ev, el) {
         var $this = $(el),
-            user = $this.siblings('input.user').val(),
-            pass = $this.siblings('input.pass').val();
+            user = $this.parent().siblings('input.user').val(),
+            pass = $this.parent().siblings('input.pass').val();
             
         this.login( this.url.val() , user, pass );
     },
