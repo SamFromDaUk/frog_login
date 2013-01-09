@@ -146,6 +146,7 @@ ul.sites li span {
     font-size:17px;
     padding: 0 5px;
     display:none;
+    line-height: 18px;
 }
 
 ul.sites li:hover span {
