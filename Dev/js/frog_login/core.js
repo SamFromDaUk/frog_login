@@ -6,7 +6,7 @@
 
 var frog_login = {
     
-    version: '0.9.2',
+    version: '0.9.3',
     logoutUrl : '/app/os/logout',
     defaultLogins: [
         {user: 'admin1'  , pass:'admin1pass'},
@@ -616,9 +616,18 @@ var frog_login = {
         for ( i = 0; i < oldVersionTemp.length; i++ ) { oldVersion += oldVersionTemp[i]; }
         for ( i = 0; i < newVersionTemp.length; i++ ) { newVersion += newVersionTemp[i]; }
 
-        this.data.version = this.version;
+        iterationVersion = parseInt(oldVersion, 10);
+        toVersion = parseInt(newVersion, 10);
         
-        //this.save();
+        while (iterationVersion < toVersion) {
+            iterationVersion++;
+            if ( typeof this[ 'upgrade_' + iterationVersion  ] !== 'undefined' ) {
+                this[ 'upgrade_' + iterationVersion  ]();
+            }
+        }
+        
+        this.data.version = this.version;
+        this.save();
      
     },
 
