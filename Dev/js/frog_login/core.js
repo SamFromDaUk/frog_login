@@ -1,12 +1,12 @@
 /**
  *  Author  : Sam Warren
  *  Name    : Frog Login
- *  Version : 0.9.5
+ *  Version : 0.9.6
  **/
 
 var frog_login = {
     
-    version: '0.9.5',
+    version: '0.9.6',
     logoutUrl : '/app/os/logout',
     defaultLogins: [
         {user: 'admin1'  , pass:'admin1pass'},
@@ -318,6 +318,15 @@ var frog_login = {
                 {url: '', login:[
                     {user:'', pass:''}
                 ]}
+            ],
+            'importUsers': [
+                'admin1',
+                'admin2',
+                'staff1',
+                'staff2',
+                'student1',
+                'student2',
+                'frogsuper'
             ]
         };
         return structure;
@@ -493,7 +502,9 @@ var frog_login = {
                 var user = loginStr[i].split('/')[0],
                     pass = loginStr[i].split('/')[1];
 
-                if ( user && user.length > 0 && pass && pass.length > 0 ) {
+                console.log( $.inArray(user, this.data.importUsers) );
+
+                if ( user && user.length > 0 && $.inArray(user, this.data.importUsers) >= 0 && pass && pass.length > 0 ) {
                     finalLogins.push({
                         user: user,
                         pass: pass
