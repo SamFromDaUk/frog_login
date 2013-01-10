@@ -651,9 +651,9 @@ var frog_login = {
      *  @param obj
      *  @return null
      *
-     **/    
+     **/
     push: function( obj ) {
-        for (key in obj) {
+        for (var key in obj) {
             this[key] = obj[key];
         }
     }
