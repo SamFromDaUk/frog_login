@@ -24,7 +24,8 @@ var options = {
         if ( typeof this.data.importUsers !== 'undefined') {
             var insertText = '';
             for (var i = 0; i < this.data.importUsers.length; i++) {
-                insertText += this.data.importUsers[i] + '\n';
+                if (i > 0) { insertText += '\n'; }
+                insertText += this.data.importUsers[i];
             }
             $('.app_import_logins').val(insertText);
         }
@@ -34,7 +35,7 @@ var options = {
         var self = this;
         
         $('.options .btn-primary').click(function() {
-            $('.options').find('input').each(function() {
+            $('.options').find('input, textarea').each(function() {
                 
                 var value,
                     $this = $(this);
@@ -46,11 +47,16 @@ var options = {
                         break;
                     case 'boolean':
                         value = $this.is(':checked');
+                        break;
+                    case 'textarea':
+                        value = $this.val().replace(/\n/g, '|');
+                        console.log(value);
+                        break;
                 }
                                 
                 self.data[ $(this).attr('data-name') ] = value;
             });
-            self.saveOptions();
+            //self.saveOptions();
         });
     },
     
