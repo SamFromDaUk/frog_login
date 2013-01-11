@@ -1,12 +1,12 @@
 /**
  *  Author  : Sam Warren
  *  Name    : Frog Login
- *  Version : 0.9.6
+ *  Version : 0.9.7
  **/
 
 var frog_login = {
     
-    version: '0.9.6',
+    version: '0.9.7',
     logoutUrl : '/app/os/logout',
     defaultLogins: [
         {user: 'admin1'  , pass:'admin1pass'},

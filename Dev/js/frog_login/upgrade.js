@@ -16,6 +16,7 @@ frog_login.push({
         ];
         this.save();
         console.log('Upgrade to 0.9.6 successful');
-    }
+    },
+    upgrade_1097: function() { console.log('Upgrade to 0.9.7 successful'); }
     
 });
