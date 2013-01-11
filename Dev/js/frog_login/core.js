@@ -650,9 +650,9 @@ var frog_login = {
     /**
      *  Push
      *
-     *  Takes an object and attaches all the keys to frog_login
+     *  Takes an object and attaches all the keys to the global frog_login object
      *
-     *  @param obj
+     *  @param obj obj
      *  @return null
      *
      **/
