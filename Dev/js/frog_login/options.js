@@ -21,6 +21,13 @@ var options = {
         if ( typeof this.data.password !== 'undefined' ) {
             if ( this.data.password ) $('.app_passwords').prop('checked', true);
         }
+        if ( typeof this.data.importUsers !== 'undefined') {
+            var insertText = '';
+            for (var i = 0; i < this.data.importUsers.length; i++) {
+                insertText += this.data.importUsers[i] + '\n';
+            }
+            $('.app_import_logins').val(insertText);
+        }
     },
     
     bind: function() {

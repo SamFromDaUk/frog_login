@@ -209,3 +209,9 @@ div.options p {
     padding-bottom:10px;
     margin-bottom:10px;
 }
+
+div.options textarea {
+    height: 139px;    
+    width:233px;
+    resize: vertical;
+}
