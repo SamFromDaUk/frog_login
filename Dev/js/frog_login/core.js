@@ -22,6 +22,7 @@ var frog_login = {
      *
      *  Generates jQuery elements and retrieves data.
      *  Renders the extension and binds events
+     *  Upgrades the data stored to the latest version
      *
      *  @param null
      *  @return null
@@ -36,7 +37,7 @@ var frog_login = {
         this.wrapper = $('.frog_log');
         this.dev_mode = (typeof this.data.dev_mode !== 'undefined') ? this.data.dev_mode : false;
         
-        if ( this.version !== this.data.version ) {
+        if ( this.data && this.version !== this.data.version ) {
             this.upgrade();
         }
         
@@ -507,8 +508,6 @@ var frog_login = {
 
                 var user = loginStr[i].split('/')[0],
                     pass = loginStr[i].split('/')[1];
-
-                console.log( $.inArray(user, this.data.importUsers) );
 
                 if ( user && user.length > 0 && $.inArray(user, this.data.importUsers) >= 0 && pass && pass.length > 0 ) {
                     finalLogins.push({

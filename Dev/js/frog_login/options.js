@@ -49,14 +49,20 @@ var options = {
                         value = $this.is(':checked');
                         break;
                     case 'textarea':
-                        value = $this.val().replace(/\n/g, '|');
-                        console.log(value);
+                        value = [];
+                        textVal = $this.val().split('\n');
+
+                        for (var i = 0; i < textVal.length; i++) {
+                            if ( $.trim(textVal[i]).length > 1 ) {
+                                value.push( $.trim(textVal[i]) );
+                            }
+                        }
                         break;
                 }
                                 
                 self.data[ $(this).attr('data-name') ] = value;
             });
-            //self.saveOptions();
+            self.saveOptions();
         });
     },
     
