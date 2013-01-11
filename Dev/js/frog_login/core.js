@@ -72,6 +72,11 @@ var frog_login = {
             success: function(data) {}
         });
     
+        if ( siteUrl.match('frogosdev.co.uk') === null ) {
+            alert('It appears that your url is not valid. Please check and try again.');
+            return;
+        }
+    
         chrome.tabs.getSelected(null, function(tab) {
             tabId = tab.id;
             chrome.tabs.update(tabId, {url: siteUrl });
