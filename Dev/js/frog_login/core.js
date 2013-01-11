@@ -47,6 +47,7 @@ var frog_login = {
         this.bind();
         this.updateButtons();
         this.fixHeight();
+        this.save();
         
         if ( this.dev_mode ) { this.dev(); }
     },
