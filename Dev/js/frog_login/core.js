@@ -37,7 +37,7 @@ var frog_login = {
         this.wrapper = $('.frog_log');
         this.dev_mode = (typeof this.data.dev_mode !== 'undefined') ? this.data.dev_mode : false;
         
-        if ( this.data && this.version !== this.data.version ) {
+        if ( this.version !== this.data.version ) {
             this.upgrade();
         }
         
@@ -321,6 +321,7 @@ var frog_login = {
             'active': 0,
             'password': true,
             'dev_mode': false,
+            'version': this.version,
             'urls': [
                 {url: '', login:[
                     {user:'', pass:''}
