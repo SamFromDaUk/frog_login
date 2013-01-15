@@ -115,6 +115,7 @@ frog_login.push({
         
         this.clearLogins();
         this.renderFromStorage();
+        this.save();
     },
 
     'button[data-action="add.url"] click': function(ev, el) {
