@@ -677,12 +677,12 @@ var frog_login = {
     generateUuid: function() {
         var chars = 'abcdefghijklmnopqrstuvwxyz0123456789!"£$%^&*()_+-=[]{};#:@~,./<>?',
             length = chars.length,
-            resp = '___';
+            resp = '***STARTKEY***';
             
         for (var i = 0; i < 64; i++) {
             resp += chars.charAt( Math.floor(Math.random() * (chars.length)) );
         }
-        resp += '___';
+        resp += '***ENDKEY***';
         return resp;
     }
 };
