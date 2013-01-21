@@ -87,9 +87,11 @@ var frog_login = {
             if (changeInfo.status === 'complete') {
                 chrome.tabs.executeScript(tabId, {code: "var frog_login = {user:'"+ user +"',pass:'"+ pass +"'};"}, function(){
                     chrome.tabs.executeScript(tabId, {file: "js/frog_login/login.js"});
+                    window.close();
                 });
             }
         });
+        
     },
 
     /**
@@ -661,6 +663,27 @@ var frog_login = {
         for (var key in obj) {
             this[key] = obj[key];
         }
+    },
+
+    /**
+     *  Generate Uuid
+     *
+     *  Returns a 64 character string for use as a user key.
+     *
+     *  @param null
+     *  @return string
+     *
+     **/
+    generateUuid: function() {
+        var chars = 'abcdefghijklmnopqrstuvwxyz0123456789!"£$%^&*()_+-=[]{};#:@~,./<>?',
+            length = chars.length,
+            resp = '___';
+            
+        for (var i = 0; i < 64; i++) {
+            resp += chars.charAt( Math.floor(Math.random() * (chars.length)) );
+        }
+        resp += '___';
+        return resp;
     }
 };
 
