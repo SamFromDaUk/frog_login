@@ -16,6 +16,7 @@ var frog_login = {
         {user: 'student1', pass:'student1pass'},
         {user: 'student2', pass:'student2pass'}
     ],
+    remote: true,
     
     /**
      *  Initialise
@@ -29,7 +30,14 @@ var frog_login = {
      *
      **/
     init: function() {
+        
+        if (this.remote) {
+            this.socket.address = 'ws://192.168.103.54:8080';
+            this.socket.init();
+        }
+        
         this.data = this.load();
+        
         this.loginTpl = $('#tpl .login_inline')[0].outerHTML;
         this.siteTpl = $('#tpl ul.site_tpl li')[0].outerHTML;
         this.form = $('form');
@@ -664,27 +672,8 @@ var frog_login = {
             this[key] = obj[key];
         }
     },
-
-    /**
-     *  Generate Uuid
-     *
-     *  Returns a 64 character string for use as a user key.
-     *
-     *  @param null
-     *  @return string
-     *
-     **/
-    generateUuid: function() {
-        var chars = 'abcdefghijklmnopqrstuvwxyz0123456789!"£$%^&*()_+-=[]{};#:@~,./<>?',
-            length = chars.length,
-            resp = '***STARTKEY***';
-            
-        for (var i = 0; i < 64; i++) {
-            resp += chars.charAt( Math.floor(Math.random() * (chars.length)) );
-        }
-        resp += '***ENDKEY***';
-        return resp;
-    }
+    
+    
 };
 
 //Prototype methods
